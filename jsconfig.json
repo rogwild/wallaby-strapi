@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["."],
+      "~api/*": ["./api/*"],
+      "~testsHelpers/*": ["./tests/helpers/*"],
+      "~utils/*": ["./utils/*"]
+    }
+  }
+}

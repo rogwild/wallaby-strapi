@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "name": "Order",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "price": {
+      "type": "float"
+    },
+    "amount": {
+      "type": "float"
+    },
+    "result": {
+      "type": "float"
+    },
+    "opened": {
+      "type": "biginteger",
+      "unique": false
+    },
+    "closed": {
+      "type": "biginteger"
+    },
+    "side": {
+      "type": "enumeration",
+      "enum": ["sell", "buy"]
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["open", "filled", "canceled", "partial_filled"]
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": ["limit", "market", "oco", "panic_sell", "panic_buy"]
+    },
+    "suborders": {
+      "collection": "order",
+      "via": "parent"
+    },
+    "parent": {
+      "model": "order",
+      "via": "suborders"
+    },
+    "comment": {
+      "type": "text"
+    },
+    "original_id": {
+      "type": "string"
+    },
+    "is_maker": {
+      "type": "boolean"
+    }
+  }
+}

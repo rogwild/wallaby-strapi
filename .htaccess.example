@@ -1,0 +1,4 @@
+PassengerNodejs /home/c/coloroeu/.local/bin/node
+PassengerAppRoot /home/c/coloroeu/mr
+PassengerAppType node
+PassengerStartupFile server.js
